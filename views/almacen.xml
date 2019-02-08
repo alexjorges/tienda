@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <act_window id="tienda_almacen_action" name="almacen"
+                     res_model="tienda.almacen" />
+
+
+        <record id="tienda_almacen_view_tree" model="ir.ui.view">
+            <field name="name">almacen</field>
+            <field name="model">tienda.almacen</field>
+            <field name="arch" type="xml">
+
+                <tree>
+                    <field name="direccion" />
+                    <field name="cp" />
+                    <field name="nombre" />
+                    <field name="telefono" />
+                    <field name="articulo" />
+                </tree>
+            </field>
+        </record>
+
+
+
+        <record id="tienda_almacen_view_search_almacen" model="ir.ui.view">
+            <field name="name">Busqueda Almacen</field>
+            <field name="model">tienda.almacen</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="direccion" />
+                    <field name="cp" />
+                    <field name="nombre"/>
+                </search>
+            </field>
+        </record>
+
+        <menuitem name="Menu" id="menu_menu" parent="menu_tienda" sequence="10"/>
+        <menuitem name="almacen" id="menu_almacen" action="tienda_almacen_action" parent="menu_menu" sequence="10"/>
+
+    </data>
+</odoo>

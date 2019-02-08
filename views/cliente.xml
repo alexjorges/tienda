@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <act_window id="tienda_cliente_action" name="cliente"
+                     res_model="tienda.cliente" />
+
+
+        <record id="tienda_cliente_view_tree" model="ir.ui.view">
+            <field name="name">Lista Clientes</field>
+            <field name="model">tienda.cliente</field>
+            <field name="arch" type="xml">
+
+                <tree>
+                    <field name="dni" />
+                    <field name="nombre" />
+                    <field name="apellidos" />
+                    <field name="cp" />
+                    <field name="direccion" />
+                    <field name="provincia" />
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="tienda_cliente_view_form" model="ir.ui.view">
+            <field name="name">Formulario de clientes</field>
+            <field name="model">tienda.cliente</field>
+            <field name="arch" type="xml">
+                <form>
+
+                    <header>
+                        <button name="limpiar" type="object" string="Limpia" class="oe_highlight" />
+                        <button name="limpia_todo" type="object" string="Limpia todo" class="oe_highlight" />
+                    </header>
+
+                    <group>
+                        <field name="dni" />
+                        <field name="nombre" />
+                        <field name="apellidos" />
+                        <field name="cp" />
+                        <field name="direccion" />
+                        <field name="provincia" />
+                    </group>
+
+                </form>
+            </field>
+        </record>
+
+
+        <record id="tienda_cliente_view_search_cliente" model="ir.ui.view">
+            <field name="name">Busqueda clientes</field>
+            <field name="model">tienda.cliente</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="dni" />
+                    <field name="nombre" />
+                </search>
+            </field>
+        </record>
+
+       <menuitem name="Tienda" id="menu_tienda" sequence="10" />
+        <menuitem name="Menu" id="menu_menu" parent="menu_tienda" sequence="10"/>
+        <menuitem name="Cliente" id="menu_cliente" action="tienda_cliente_action" parent="menu_menu" sequence="10"/>
+
+    </data>
+</odoo>

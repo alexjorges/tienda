@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <act_window id="tienda_facturas_action" name="facturas"
+                     res_model="tienda.facturas" />
+
+
+        <record id="tienda_facturas_view_tree" model="ir.ui.view">
+            <field name="name">Lista Facturas</field>
+            <field name="model">tienda.facturas</field>
+            <field name="arch" type="xml">
+
+                <tree>
+                    <field name="cdFactura" />
+                    <field name="fecha_actual" />
+                    <field name="nombreCliente" />
+                    <field name="articulos" />
+                    <field name="cantidad" />
+                    <field name="precio" />
+                    <field name="total" />
+                </tree>
+            </field>
+        </record>
+
+
+
+        <record id="tienda_facturas_view_search_facturas" model="ir.ui.view">
+            <field name="name">Busqueda facturas</field>
+            <field name="model">tienda.facturas</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="cdFactura" />
+                    <field name="fecha_actual" />
+                    <field name="nombreCliente" />
+                </search>
+            </field>
+        </record>
+
+        <menuitem name="Menu" id="menu_menu" parent="menu_tienda" sequence="10"/>
+        <menuitem name="facturas" id="menu_facturas" action="tienda_facturas_action" parent="menu_menu" sequence="10"/>
+
+    </data>
+</odoo>
